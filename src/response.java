@@ -31,7 +31,7 @@ public class response {
                 if (ans.equals("ok")) {
                     break;
                 } if (ans.equals("Explain 1")) {
-                    System.out.println("This will give you information about what a certain class is or about.\n\nEXAMPLE\n\"Explain 1\"\n");
+                    System.out.println("This will give you information about what a certain class is or about.\n\nEXAMPLE\n\"Explain 1\"");
                 }
             }
         } else {
