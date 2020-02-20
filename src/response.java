@@ -2,11 +2,11 @@ import java.util.*;
 
 public class response {
     private boolean school;
-    private boolean personal;
+    private boolean help;
 
     public  response() {
         school = false;
-        personal = false;
+        help = false;
     }
 
     public void respond(String ans) {
@@ -15,41 +15,27 @@ public class response {
         //Makes the user's response lowercase for evaluation
         ans = ans.toLowerCase();
 
-        //These set a boolean value true or false so that it triggers a certain loop
+
         if (ans.equals("school")) {
             school = true;
-        } else if (ans.equals("personal")) {
-            personal = true;
         } else if (ans.equals("hello") || ans.equals("hi") || ans.equals("hey")) {
-            System.out.println("Howdy :)");
-        } else {
-            System.out.println("Could you please repeat that? ");
-        }
+            System.out.println("Hello :)\nWhat do you need help with?");
+        } else if (ans.equals("help")) {
+            help = true;
+            while (help) {
+                System.out.println("HELP:\nI am the Magpie virtual assistant, here to help you with your STEM information needs!\n\nHere are some topics I am able to cover:\n1.) Class Summaries and Descriptions\n2.) Schedule Questions and Period Times\n3.) STEM Class Locations\n\nI am still learning so please bare with my options for now!\nTo exit help, please respond with \"Ok\"\nFor further information please respond with \"Explain \" and the number associated with each topic.");
 
-        //This is an example of one of the topic loops
-        //This one is for school related conversation
-        while (school) {
-            System.out.println("So how is school? ");
-            ans = scan.nextLine();
+                ans = scan.nextLine();
+                ans = ans.toLowerCase();
 
-            ans = ans.toLowerCase();
-
-            if (ans.equals("good") || ans.equals("well")){
-                System.out.println("That's good. I'm glad to hear it! ");
-                ans = null;
-                school = false;
-
-            } else if (ans.equals("bad") || ans.equals("not good")){
-                System.out.println("Oh! I'm sorry to hear that! I wish there was something I could do. Too bad I'm fake");
-                ans = null;
-                school = false;
-
-            } else if (ans.equals("back")) {
-                school = false;
-
-            } else {
-                System.out.println("Could you please repeat that? ");
+                if (ans.equals("ok")) {
+                    break;
+                } if (ans.equals("Explain 1")) {
+                    System.out.println("This will give you information about what a certain class is or about.\n\nEXAMPLE\n\"Explain 1\"\n");
+                }
             }
+        } else {
+            System.out.println("Could you please repeat that?");
         }
     }
 }
