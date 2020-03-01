@@ -28,7 +28,7 @@ public class response {
                 ans = scan.nextLine();
                 ans = ans.toLowerCase();
 
-                if (ans.equals("ok")) {
+                if (ans.equals("ok") || ans.equals("bye")) {
                     break;
                 } if (ans.equals("Explain 1")) {
                     System.out.println("This will give you information about what a certain class is or about.\n\nEXAMPLE\n\"Explain 1\"");
