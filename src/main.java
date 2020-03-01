@@ -6,7 +6,7 @@ public class main {
         Scanner scan = new Scanner(System.in);
 
         //This is the opening statement to the user. Helps the user understand the program.
-        System.out.println("Hello! Welcome to Magpie, your Personal School Assistant!\nWhat can I do for you today? ");
+        System.out.println("Hello! Welcome to Magpie, your Personal School Assistant!\nWhat can I do for you today?\n(If you need help at any time, just type \"Help\")");
 
         //I make an object referencing the "response" class.
         response r = new response();
@@ -23,6 +23,7 @@ public class main {
             r.respond(ans);
             ans = scan.nextLine();
             ans = ans.toLowerCase();
+            ans = ans.replaceAll("\\s", "");
         }
     }
 }
