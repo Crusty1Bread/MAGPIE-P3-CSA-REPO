@@ -1,24 +1,18 @@
 import java.util.*;
 
 public class response {
-    private boolean school;
     private boolean help;
+    private boolean schedule;
 
     public  response() {
-        school = false;
         help = false;
+        schedule = false;
     }
 
     public void respond(String ans) {
         Scanner scan = new Scanner(System.in);
 
-        //Makes the user's response lowercase for evaluation
-        ans = ans.toLowerCase();
-
-
-        if (ans.equals("school")) {
-            school = true;
-        } else if (ans.equals("hello") || ans.equals("hi") || ans.equals("hey")) {
+        if (ans.equals("hello") || ans.equals("hi") || ans.equals("hey")) {
             System.out.println("Hello :)\nWhat do you need help with?");
         } else if (ans.equals("help")) {
             help = true;
@@ -30,7 +24,7 @@ public class response {
                 ans = ans.replaceAll("\\s", "");
 
                 if (ans.equals("ok") || ans.equals("bye")) {
-                    break;
+                    help = false;
                 } if (ans.equals("explain1") || ans.equals("1explain")) {
                     System.out.println("\nThis will give you information about what a certain class is or about.\n\nEXAMPLE:\n\">AP Computer Science A\"\n\"This is a course where you will learn about the writing of Java programs in preparation for the AP exam\"\n");
                 } if (ans.equals("explain2") || ans.equals("2explain")){
@@ -41,8 +35,25 @@ public class response {
                     System.out.println("\nThis will give you contact information in order to communicate with certain teachers.\n\nEXAMPLE:\n\">What is Mr.Smith's email?\"\n\"You can contact Mr.Smith at 123456@cnusd.k12.ca.us.\"");
                 }
             }
+        } else if (ans.contains("schedule")) {
+            schedule = true;
+            while (schedule) {
+                System.out.println("Would you like to talk about period scheduling?");
+                ans =  scan.nextLine();
+                ans = ans.toLowerCase();
+                ans = ans.replaceAll("\\s", "");
+                if (ans.equals("yes") || ans.equals("y") || ans.equals("yeah") || ans.equals("ye")) {
+                    System.out.println("Cool, this worked!");
+                } else if (ans.equals("no") || ans.equals("n") || ans.equals("nay")) {
+                    System.out.println("Oh! I'm sorry about this!");
+                    schedule = false;
+                } else {
+                    System.out.println("Could you please repeat that?");
+                }
+            }
         } else {
             System.out.println("Could you please repeat that?");
+
         }
     }
 }
