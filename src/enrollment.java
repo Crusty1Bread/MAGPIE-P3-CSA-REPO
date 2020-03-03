@@ -24,7 +24,5 @@ public class enrollment {
         } else{
             return;
         }
-
-
     }
 }
