@@ -1,6 +1,6 @@
 public class enrollment {
     public void enrollment() {
-        System.out.println("what would you like to explore?");
+        System.out.println("What would you like to explore?");
         System.out.println("There are four main class in Estem." );
         System.out.println("Computer Science, Robotic, Contruction, Medical Terminology.");
         System.out.println("Choose one class for more information:");
@@ -21,7 +21,7 @@ public class enrollment {
                 System.out.println("In Ap Computer Science Principle you will learn how to use code.org to create a game or an app,");
                 System.out.print("this class is little bit earier than Computer Science A.");
             }else {
-                System.out.println("For Computer Science A we use java language instead of the asistant blocks in code.org.");
+                System.out.println("For Computer Science A, we use java language instead of the asistant blocks in code.org.");
             }
         } else if (enroll.equals("robotic")){
             System.out.println("In ");
